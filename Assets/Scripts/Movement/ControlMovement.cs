@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UI;
+using UnityEngine;
 using UnityEngine.AI;
 
 namespace Movement
@@ -9,6 +10,7 @@ namespace Movement
         public float BaseMovePoints;
 
         public NavMeshAgent NavAgent;
+        public PlayerPanel UiPanel;
 
         private float currentMovePoints;
 
@@ -20,6 +22,7 @@ namespace Movement
             {
                 //Translate(moveVector);
                 Navigate(moveVector);
+                UiPanel.UpdateMovementPie(currentMovePoints / BaseMovePoints);
             }
         }
 
